@@ -17,7 +17,7 @@ TARGET = "Outcome"
 st.set_page_config(page_title="Diabetes Prediction", layout="wide")
 st.title("Diabetes Prediction App")
  
-# --- 1. L'API répond-elle ? ---
+# -- 1. Vérification de la disponibilité de l'API ---
 try:
     health = requests.get(f"{API_URL}/health", timeout=5)
     health.raise_for_status()

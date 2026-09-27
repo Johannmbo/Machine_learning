@@ -4,4 +4,4 @@ __pycache__/
 venv/
 .venv/
 .env
-data/data.csv
+data/diabetes.csv
