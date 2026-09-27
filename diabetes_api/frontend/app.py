@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import requests
 import streamlit as st
- 
+
 # --- Config ---
 API_URL = os.environ.get("API_URL", "http://localhost:8500").rstrip("/")
 DEFAULT_DATA = os.environ.get("DEFAULT_DATA", "../data/diabetes.csv")
