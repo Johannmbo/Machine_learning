@@ -1,0 +1,20 @@
+services:
+  diabetes-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: diabetes-api:1.0.0
+    container_name: diabetes-api
+    ports:
+      - "8500:8500"
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8500/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+  
